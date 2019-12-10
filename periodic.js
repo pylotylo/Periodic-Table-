@@ -1,72 +1,83 @@
-// Here's my idea for how to simplify this code:
-// Define all of the elements at the top here
-// You could even do this is another file called elements.json
-// or something like that
-
 const elements = [
-    {
-        name: "Hydrogen",
-        symbol: "H",
-        x: 0,
-        y: 0
-    },
-    {
-        name: "Lithium",
-        symbol: "Li",
-        x: 0,
-        y: 1
-    }
+  {
+      name: "Hydrogen",
+      symbol: "H",
+      atomic: "1",
+      mass: "1.008",
+      x: 0,
+      y: 0
+  },
+  {
+      name: "Lithium",
+      symbol: "Li",
+      atomic: "3",
+      mass: "6.941",
+      x: 0,
+      y: 1
+  }
 ]
 
-
 function setup() {
-  createCanvas(600, 400);
-  background(60);
+createCanvas(1200, 800);
+background(60);
 }
 
-// this.x = (600/22);
-// 'this' is a keyword aceesing fields of a class, usually used like this:
-// class Car
-//      constructor() {
-//          this.color = "Blue;
-//      }
-//
-//  Here, you should use a global constant like this:
-const elementSize = (600/22);
+const elementSize = (1200/22);
 
-
-// This function looks at the list of elements defined above and draws each
-// one in the correct spot
 function drawElements() {
-  // Set the fill and stroke colors...
-  stroke(255);
-  strokeWeight(1);
 
-  // Loop through our elements list and for each one of them,
-  // we draw a square using the x and y defined on each element,
-  // and the symbol defined on each element.
+stroke(255);
+strokeWeight(1);
 
-  // Now, you can add elements to the list above and as long as
-  // you set their x and y correctly, they will be drawn in the 
-  // right spot automatically! No more hardcoded calls to square() (:
-  for (let i = 0; i < elements.length; i++) {
-      let currElement = elements[i];
-      let x = (2 + currElement.x) * elementSize;
-      let y = (2 + currElement.y) * elementSize;
-      let symbol = currElement.symbol;
-
-      fill(60);
-      square(x, y, elementSize);
-      textAlign(CENTER);
-      fill(255);
-      textSize(10);
-      text(symbol, x + elementSize / 2 , y + elementSize / 2);
-      fill(60);
-    }
+for (let i = 0; i < elements.length; i++) {
+    let currElement = elements[i];
+    let x = (2 + currElement.x) * elementSize;
+    let y = (2 + currElement.y) * elementSize;
+    let symbol = currElement.symbol;
+    let atomic = currElement.atomic;
+    let mass = currElement.mass;
+  
+  
+  // Remember that x and y describe the TOP LEFT corner of each element!
+  
+  if (mouseX > x  && mouseX < x + (elementSize) &&    // is mouseX between the borders of this square?
+      mouseY > y  && mouseY < y + (elementSize)) {    // is mouseY between the borders of this square?
+    // mouse is over the element!
+    // lets set the fill for a hovered element
+    fill(120);
+    
+  } else {
+    // mouse is not over this element... set fill as regular background color
+    fill(60); 
+  }
+  
+  // Draw the element square
+    square(x, y, elementSize);
+  
+  // Draw the corner triangle
+    noFill();
+    triangle(x, y, x, y + 25, x + 23, y);
+  
+  // Draw the symbol text 
+    textAlign(CENTER);
+    fill(255);
+    textSize(16);
+    text(symbol, x + elementSize / 2 , y + elementSize / 2);
+    
+  // Draw the atomic number text
+    textAlign(CENTER);
+    fill(255);
+    textSize(9);      
+    text(atomic, x + elementSize / 9.5 , y + elementSize / 5);
+  
+  // Draw the mass text
+    textAlign(CENTER);
+    fill(255);
+    textSize(9);
+    text(mass, x + elementSize / 2 , y + elementSize / 1.25);
+  }
 }
 
 function draw() {
-  drawElements();
+drawElements();
 }
-  
-
