@@ -9,3 +9,16 @@ language to really tie this together,
 i'm currently working on the framework for
 the table itself, namely, how the mouse will
 interact with each element.
+_____________________________________________
+December 21, 2019
+The javascript framework for the table is 
+almost complete. I'm shifting focus now 
+towards learning more about HTML and CSS, as 
+well as other working platforms. Namely, I'm
+considering using VS code, as opposed to 
+Sublime Text. I've had issues with installing
+extensions in Sublime Text, possibly because
+I haven't registered my software pack/payed 
+for use. VS code seems a little easier to use
+and has some additional feature that make it 
+more appealing than Sublime Text.
