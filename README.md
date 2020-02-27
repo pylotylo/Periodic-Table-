@@ -12,6 +12,14 @@ popup modules for each element, which
 additional information regarding the 
 properties of each element that are useful
 in chemistry bookwork and lab work!
+
+I've also tried to convert the list of 
+element constants in both a separate JS file
+as well a a JSON file, but have had some 
+issues loading those in the framework.js
+file. I'll return to that issue at somepoint
+if need be, but for now things are moving in
+the right direction
 _____________________________________________
 
 learning JS as I work on this, 
