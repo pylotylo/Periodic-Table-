@@ -1105,7 +1105,20 @@ function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
     background(60);
 }
+/*
+function thisFill() {
+    if (mouseX > x &&
+        mouseX < x + elementSize &&
+        mouseY > y &&
+        mouseY < y + elementSize) {
 
+        fill(30);
+    } else {
+        fill("#" + currElement.fill)
+    }
+
+}
+*/
 function drawElements() {
 
     const elementSize = window.innerWidth / 22;
@@ -1121,23 +1134,19 @@ function drawElements() {
         let symbol = currElement.symbol;
         let atomic = currElement.atomic;
         let mass = currElement.mass;
-        let size = currElement.size;
-        let CESes = size / elementSize;
-        let ESces = 1 / CESes;
+        let CESes = elementSize / 3.5;
+        let ESces = elementSize / 6.05;
 
         if (mouseX > x &&
             mouseX < x + elementSize &&
             mouseY > y &&
             mouseY < y + elementSize) {
-            //currElement.size++;
-            // change color and stroke weight for hovered element
+
+            fill(30);
+
+            //change color and stroke weight for hovered element
             stroke(255, 0, 0);
             strokeWeight(3);
-
-            //if(currElement.size > maxES) { break; }
-
-        } else {
-            currElement.size = elementSize;
         }
 
 
@@ -1147,35 +1156,40 @@ function drawElements() {
         // change color and stroke weight BACK for non-hovered elements
         stroke(255, 255, 255);
         strokeWeight(1);
-        //draw corner triangle
+        /*draw corner triangle
+            noFill();
+            triangle(x,
+                y,
+                x,
+                y + (elementSize / 2.1818),
+                x + (elementSize / 2.1818),
+                y);
+        */
+
+        //draw a corner squar instead of a corner triangle
         noFill();
-        triangle(x,
-            y,
-            x,
-            y + (elementSize / 2.1818),
-            x + (elementSize / 2.1818),
-            y);
+        rect(x, y, (elementSize / 3), (elementSize / 4), 0, 0, (elementSize / 15), 0);
         //draw element symbol text
         textAlign(CENTER);
         fill(255);
-        textSize(16 * CESes);
+        textSize(CESes);
         text(symbol,
-            x + size / 2,
-            y + size / 2);
+            x + elementSize / 2,
+            y + elementSize / 2);
         //draw atomic number
         textAlign(CENTER);
         fill(255);
-        textSize(9 * CESes);
+        textSize(ESces);
         text(atomic,
-            x + size / 9.5,
-            y + size / 5);
+            x + elementSize / 6,
+            y + elementSize / 5);
         //draw atomic mass
         textAlign(CENTER);
         fill(255);
-        textSize(9 * CESes);
+        textSize(ESces);
         text(mass,
-            x + size / 2,
-            y + size / 1.25);
+            x + elementSize / 2,
+            y + elementSize / 1.25);
     }
 
 }
