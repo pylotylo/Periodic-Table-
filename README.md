@@ -1,4 +1,22 @@
 # Periodic-Table-
+
+PRZESZTON:
+ok so im running this on local server, using 'python -m SimpleHTTPServer'
+command in terminal, if you got a different way of doing this thats all good.
+J letting you know whats up on my end.
+
+I've updated framework.js, still stuck on the scope issue with the elements object.
+Got it so that the global array 'stuff' is appended with the element objects from the 
+json file. After the setup function runs, 'stuff' contains one item:
+the array of element objects. So an array within an array. I tried to define
+a new variable with just the array of element objects (should be stuff[0] if 
+I'm understanding this). But the console in chrome shows this as undefined???
+
+Getting tired of looking at code for today, pls help troubleshoot when you have a chance
+... pls
+
+
+
 Most Recent Updates! (as of 02/27/2020)
 here is a (nearly) functioning table framework, with the working mouse detection feature!
 
