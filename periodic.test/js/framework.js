@@ -3,8 +3,7 @@ let elements = [];
 let elementSize = window.innerWidth / 25;
 
 function preload() {
-    let url = 'elements.json';
-    json = loadJSON(url);
+    json = loadJSON('elements.json');
 }
 
 function setup() {
