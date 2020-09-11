@@ -134,15 +134,19 @@
         "fill": "B0CD31"
     },
     {
-        "name": "Lanthanides",
-        "symbol": "put a down arrow here",
+        "name": "La",
+        "symbol": "NA",
+        "atomic": "",
+        "mass": 88.91,
         "x": 2,
         "y": 5,
         "fill": "34A2E5"
     },
     {
-        "name": "Actinides",
-        "symbol": "put a down arrow here",
+        "name": "Ac",
+        "symbol": "NA",
+        "atomic": "",
+        "mass": 88.91,
         "x": 2,
         "y": 6,
         "fill": "8916A7"
