@@ -32,16 +32,5 @@ function drawTable() {
 
 function draw() {
     drawTable();
-    stroke(255);
-    fill(45);
-    rect(21 * elementSize,
-        2 * elementSize,
-        3 * elementSize,
-        5 * elementSize);
-    noStroke();
-    fill(255);
-    textSize(elementSize / 3.5);
-    text("Future Menu",
-        22 * elementSize,
-        2.5 * elementSize);
+    drawDisplay();
 }
